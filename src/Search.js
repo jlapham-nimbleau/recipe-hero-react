@@ -21,6 +21,7 @@ const Search = ({ filterOutHandler }) => {
   const minusHandler = (ingredient) => {
     // TODO: Consult with old man Coberly around how best to implement this
     //   * Update filtering of recipes -- shouldn't this be done on `App` component?
+    //   * Is a handler calling another handler a common pattern?
     console.log(`[minusHandler] ${ingredient}`);
     filterOutHandler(ingredient);
   }
