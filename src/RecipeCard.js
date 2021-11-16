@@ -17,8 +17,12 @@ const RecipeCard = ({ recipe }) => {
           </p>
         </div>
         <ul className="recipe-step-indicator">
-          {steps.map(({ stepNumber }) => (
-            <li className={activeStep === stepNumber ? "active" : ""}>{stepNumber}</li>
+          {steps.map(({ stepNumber }, index) => (
+            <li
+              key={`${index}-${stepNumber}`}
+              className={activeStep === stepNumber ? "active" : ""}>
+              {stepNumber}
+            </li>
           ))}
         </ul>
         {/* TODO: This feels dodgy; should maybe have an `activeStepIndex` state prop as well */}
