@@ -14,13 +14,20 @@ const App = () => {
       })
   }, []);
 
+  const filterOutIngredient = (ingredient) => {
+    // TODO: Finish implementing this logic -- apply filtered result to `recipes`
+    // TODO: Use state for original recipes? Probably for filtered results might be better?
+    const filtered = recipes.filter((recipe) => !recipe.ingredients.includes(ingredient));
+    console.log(`Filtered recipes: $${JSON.stringify(filtered)}`);
+  }
+
   return (
     <div id="the-app">
       <header className="app-header">
         <h1>Recipe Hero</h1>
       </header>
       <main>
-        <Search />
+        <Search filterOutHandler={filterOutIngredient} />
 
         {recipes.length > 0 && (
           <RecipeList recipes={recipes} />

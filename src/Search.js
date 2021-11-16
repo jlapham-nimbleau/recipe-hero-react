@@ -17,12 +17,12 @@ const ingredients = [
   },
 ];
 
-const Search = () => {
+const Search = ({ filterOutHandler }) => {
   const minusHandler = (ingredient) => {
     // TODO: Consult with old man Coberly around how best to implement this
-    // TODO: Update filtering of recipes -- shouldn't this be done on `App` component?
-    // TODO: Use state for filter options
-    console.log(`[minusHandler] ${JSON.stringify(ingredient)}`);
+    //   * Update filtering of recipes -- shouldn't this be done on `App` component?
+    console.log(`[minusHandler] ${ingredient}`);
+    filterOutHandler(ingredient);
   }
 
   return (
