@@ -19,6 +19,9 @@ const ingredients = [
 
 const Search = () => {
   const minusHandler = (ingredient) => {
+    // TODO: Consult with old man Coberly around how best to implement this
+    // TODO: Update filtering of recipes -- shouldn't this be done on `App` component?
+    // TODO: Use state for filter options
     console.log(`[minusHandler] ${JSON.stringify(ingredient)}`);
   }
 
