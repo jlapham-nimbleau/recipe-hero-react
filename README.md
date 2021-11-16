@@ -14,7 +14,7 @@ Refactor the HTML and CSS in `src/App.js` to use components and dynamically filt
 ## Rubric
 
 * [ ] - Code has over 7 components
-* [ x ] - No hard-coded data, including ingredients
+* [ ] - No hard-coded data, including ingredients
 * [ x ] - Recipes are fetched from JSON file
 * [ ] - Adding and removing ingredients changes the available recipes
 * [ x ] - Multi-step Recipes can navigate forward and backward
