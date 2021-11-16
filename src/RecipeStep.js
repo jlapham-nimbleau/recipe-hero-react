@@ -6,7 +6,7 @@ const RecipeStep = ({ step }) => {
       <p>
         {description}
       </p>
-      <img src={imageUrl} alt={`Step ${stepNumber}`} />
+      <img src={`/images/${imageUrl}`} alt={`Step ${stepNumber}`} />
     </div>
   )
 }
