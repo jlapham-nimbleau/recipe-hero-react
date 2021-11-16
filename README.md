@@ -18,5 +18,5 @@ Refactor the HTML and CSS in `src/App.js` to use components and dynamically filt
 * [ x ] - Recipes are fetched from JSON file
 * [ ] - Adding and removing ingredients changes the available recipes
 * [ x ] - Multi-step Recipes can navigate forward and backward
-* [ ] - Having no recipe matches displays a useful message
+* [ x ] - Having no recipe matches displays a useful message
 * [ ] - Styling is preserved
