@@ -5,7 +5,8 @@ const IngredientItem = ({ title, minusHandler }) => {
   return (
     <li className="recipe-ingredient">
       <span>{title}</span>
-      <span onClick={minusHandler(title)}>
+      {/* TODO: This syntax tripped me up for way too long; consult with old man Coberly */}
+      <span onClick={() => minusHandler(title)}>
         <FontAwesomeIcon icon={faMinusCircle} className="icon" />
       </span>
     </li>

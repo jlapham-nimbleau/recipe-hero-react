@@ -19,7 +19,7 @@ const ingredients = [
 
 const Search = () => {
   const minusHandler = (ingredient) => {
-    console.log(`[minusHandler] ${ingredient}`);
+    console.log(`[minusHandler] ${JSON.stringify(ingredient)}`);
   }
 
   return (
