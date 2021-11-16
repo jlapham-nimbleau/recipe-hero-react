@@ -11,7 +11,7 @@ const RecipeCard = ({ recipe }) => {
       <div className="recipe-card">
         <h2>{title}</h2>
         <div className="recipe-description">
-          <img src={`/images/${imageUrl}`} />
+          <img src={`/images/${imageUrl}`} alt={title} />
           <p>
             {description}
           </p>
