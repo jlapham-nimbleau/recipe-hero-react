@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 const RecipeCard = ({ recipe }) => {
   const { title, description, imageUrl, steps } = recipe;
+  const [activeStep, setActiveStep] = useState(1);
+  const nextHandler = () => setActiveStep(activeStep + 1);
 
   return (
     <li>
@@ -27,7 +31,7 @@ const RecipeCard = ({ recipe }) => {
           <img src="/images/framed-egg-1.jpg" alt="Step 1" />
         </div>
         <div className="command-bar">
-          {/* Placeholder to keep flex style */}<span></span><button>Next</button>
+          {/* Placeholder to keep flex style */}<span></span><button onClick={nextHandler}>Next</button>
         </div>
       </div>
     </li>
