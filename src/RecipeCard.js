@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RecipeStep from "./RecipeStep";
 
 const RecipeCard = ({ recipe }) => {
   const { title, description, imageUrl, steps } = recipe;
@@ -16,20 +17,12 @@ const RecipeCard = ({ recipe }) => {
           </p>
         </div>
         <ul className="recipe-step-indicator">
-          <li className="active">1</li>
-          <li className="">2</li>
-          <li className="">3</li>
-          <li className="">4</li>
-          <li className="">5</li>
-          <li className="">6</li>
+          {steps.map(({ stepNumber }) => (
+            <li className={activeStep === stepNumber ? "active" : ""}>{stepNumber}</li>
+          ))}
         </ul>
-        <div className="recipe-step">
-          <p>
-            Cut out center of each bread slice using a 2 1/2- to 3-inch heart, round,
-            or other shaped cookie cutter. Set slices aside, reserving both bread and cutouts.
-          </p>
-          <img src="/images/framed-egg-1.jpg" alt="Step 1" />
-        </div>
+        {/* TODO: This feels dodgy; should maybe have an `activeStepIndex` state prop as well */}
+        <RecipeStep step={steps[activeStep - 1]} />
         <div className="command-bar">
           {/* Placeholder to keep flex style */}<span></span><button onClick={nextHandler}>Next</button>
         </div>
