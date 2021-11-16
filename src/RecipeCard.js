@@ -25,7 +25,7 @@ const RecipeCard = ({ recipe }) => {
             </li>
           ))}
         </ul>
-        {/* TODO: This feels dodgy; should maybe have an `activeStepIndex` state prop as well */}
+        {/* TODO: This is dodgy & will break; should maybe have an `activeStepIndex` state prop as well */}
         <RecipeStep step={steps[activeStep - 1]} />
         <div className="command-bar">
           {/* Placeholder to keep flex style */}<span></span><button onClick={nextHandler}>Next</button>
