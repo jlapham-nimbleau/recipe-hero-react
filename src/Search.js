@@ -1,6 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMinusCircle, faPlus } from "@fortawesome/free-solid-svg-icons"
 
+const ingredients = [
+  {
+    title: "Eggs"
+  },
+  {
+    title: "Bread"
+  },
+  {
+    title: "Cheese"
+  },
+  {
+    title: "Bacon"
+  },
+];
+
 const Search = () => {
   return (
     <section className="ingredient-search">
@@ -14,22 +29,12 @@ const Search = () => {
         </button>
       </form>
       <ul className="ingredients">
-        <li className="recipe-ingredient">
-          <span>Eggs</span>
-          <FontAwesomeIcon icon={faMinusCircle} className="icon" />
-        </li>
-        <li className="recipe-ingredient">
-          <span>Bread</span>
-          <FontAwesomeIcon icon={faMinusCircle} className="icon" />
-        </li>
-        <li className="recipe-ingredient">
-          <span>Cheese</span>
-          <FontAwesomeIcon icon={faMinusCircle} className="icon" />
-        </li>
-        <li className="recipe-ingredient">
-          <span>Bacon</span>
-          <FontAwesomeIcon icon={faMinusCircle} className="icon" />
-        </li>
+        {ingredients.map(({ title }, index) => (
+          <li key={`${index}-${title}`} className="recipe-ingredient">
+            <span>{title}</span>
+            <FontAwesomeIcon icon={faMinusCircle} className="icon" />
+          </li>
+        ))}
       </ul>
     </section>
   )
