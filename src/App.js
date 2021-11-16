@@ -21,7 +21,14 @@ const App = () => {
       </header>
       <main>
         <Search />
-        <RecipeList recipes={recipes} />
+
+        {recipes.length > 0 && (
+          <RecipeList recipes={recipes} />
+        )}
+
+        {!recipes.length && (
+          <span>No recipes found.</span>
+        )}
       </main>
     </div>
   )
