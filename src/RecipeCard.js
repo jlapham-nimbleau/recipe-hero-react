@@ -1,15 +1,14 @@
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
+  const { title, description, imageUrl, steps } = recipe;
+
   return (
     <li>
       <div className="recipe-card">
-        <h2>Framed Eggs</h2>
+        <h2>{title}</h2>
         <div className="recipe-description">
-          <img src="images/framed-egg.jpg" />
+          <img src={imageUrl} />
           <p>
-            Egg in frame or toad in the hole—whatever you choose to call it, this recipe
-            is a super fun way to spruce up the classic eggs and toast breakfast. Leave
-            the yolks slightly runny so you can dip those crusty cutouts and sop up all
-            the golden goodness on your plate!
+            {description}
           </p>
         </div>
         <ul className="recipe-step-indicator">
