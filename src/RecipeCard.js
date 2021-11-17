@@ -6,6 +6,11 @@ const RecipeCard = ({ recipe }) => {
   const [activeStep, setActiveStep] = useState(1);
   const nextHandler = () => setActiveStep(activeStep + 1);
 
+  // Derived state
+  const activeStepIndex = activeStep - 1;
+  const lastStep = steps[steps.length - 1];
+  const isLastStep = activeStep === lastStep.stepNumber;
+
   return (
     <li>
       <div className="recipe-card">
@@ -25,10 +30,9 @@ const RecipeCard = ({ recipe }) => {
             </li>
           ))}
         </ul>
-        {/* TODO: This is dodgy & will break; should maybe have an `activeStepIndex` state prop as well */}
-        <RecipeStep step={steps[activeStep - 1]} />
+        <RecipeStep step={steps[activeStepIndex]} />
         <div className="command-bar">
-          {/* Placeholder to keep flex style */}<span></span><button onClick={nextHandler}>Next</button>
+          {/* Placeholder to keep flex style */}<span></span><button onClick={nextHandler} disabled={isLastStep}>Next</button>
         </div>
       </div>
     </li>
