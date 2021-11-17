@@ -29,13 +29,10 @@ const App = () => {
       <main>
         <Search filterOutHandler={filterOutIngredient} />
 
-        {recipes.length > 0 && (
-          <RecipeList recipes={recipes} />
-        )}
-
-        {!recipes.length && (
-          <span>No recipes found.</span>
-        )}
+        {displayedRecipes.length > 0
+          ? <RecipeList recipes={displayedRecipes} />
+          : <span>No recipes found.</span>
+        }
       </main>
     </div>
   )
