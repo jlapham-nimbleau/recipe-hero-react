@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlus } from "@fortawesome/free-solid-svg-icons"
+
 import IngredientItem from "./IngredientItem";
+import AddIngredientForm from "./AddIngredientForm";
 
 const ingredients = [
   {
@@ -25,14 +25,9 @@ const Search = ({ filterOutHandler }) => {
   return (
     <section className="ingredient-search">
       <h2>Search Recipes By Ingredient</h2>
-      <form className="ingredient-picker">
-        <select placeholder="Add an ingredient">
-          <option disabled="">Pick an ingredient</option>
-        </select>
-        <button>
-          <FontAwesomeIcon icon={faPlus} className="icon" />
-        </button>
-      </form>
+
+      <AddIngredientForm ingredients={ingredients} />
+
       <ul className="ingredients">
         {ingredients.map(({ title }, index) => (
           <IngredientItem
@@ -42,7 +37,7 @@ const Search = ({ filterOutHandler }) => {
           />
         ))}
       </ul>
-    </section>
+    </section >
   )
 }
 
