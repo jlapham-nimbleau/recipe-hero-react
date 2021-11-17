@@ -22,8 +22,9 @@ const App = () => {
   }
 
   const filterInIngredient = (ingredient) => {
-    // TODO: Implement this logic
-    console.log(`[filterInIngredient] ${ingredient}`);
+    // TODO: What if other ingredients are filtered out? This logic would add them back in
+    const filtered = recipes.filter((recipe) => recipe.ingredients.includes(ingredient));
+    setDisplayedRecipes(filtered);
   }
 
   return (
