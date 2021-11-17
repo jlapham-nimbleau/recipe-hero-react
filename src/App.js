@@ -5,20 +5,20 @@ import Search from "./Search";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
+  const [displayedRecipes, setDisplayedRecipes] = useState([]);
 
   useEffect(() => {
     fetch('/recipes.json')
       .then(response => response.json())
       .then(data => {
         setRecipes(data.recipes);
+        setDisplayedRecipes(data.recipes);
       })
   }, []);
 
   const filterOutIngredient = (ingredient) => {
-    // TODO: Finish implementing this logic -- apply filtered result to `recipes`
-    // TODO: Use state for original recipes? Probably for filtered results might be better?
     const filtered = recipes.filter((recipe) => !recipe.ingredients.includes(ingredient));
-    console.log(`Filtered recipes: $${JSON.stringify(filtered)}`);
+    setDisplayedRecipes(filtered);
   }
 
   return (
