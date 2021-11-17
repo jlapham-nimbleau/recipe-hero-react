@@ -21,13 +21,21 @@ const App = () => {
     setDisplayedRecipes(filtered);
   }
 
+  const filterInIngredient = (ingredient) => {
+    // TODO: Implement this logic
+    console.log(`[filterInIngredient] ${ingredient}`);
+  }
+
   return (
     <div id="the-app">
       <header className="app-header">
         <h1>Recipe Hero</h1>
       </header>
       <main>
-        <Search filterOutHandler={filterOutIngredient} />
+        <Search
+          filterOutHandler={filterOutIngredient}
+          filterInHandler={filterInIngredient}
+        />
 
         {displayedRecipes.length > 0
           ? <RecipeList recipes={displayedRecipes} />
